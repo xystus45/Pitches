@@ -19,7 +19,7 @@ Prerequisites
 
 Installation steps
 
-    $ git clone https://xystus45.github.io/Pitches/. 
+    $ git clone 
     $ cd IP-Pitch
     $ source virtual/bin/activate
     Inside the manage.py module change the config_name parameter from 'production' to 'development' ie app = create_app('production') should be app = create_app('development')
