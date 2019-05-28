@@ -1,26 +1,25 @@
 APP NAME
-The M.M.A Pitcher
+Pitches
 AUTHOR
 
-Mark Mugwere Agimba
+Ngigi kariuki
 DESCRIPTION
 
-This is an app that allows users to create,submit,vote pitches based on categories
+This is an app that allows users to create,submit, based on categories
 User Stories
 
     A users can see pitches that other people have posted
-    A user can vote on posted pitches with either a down or an up vote
     A user can comment on different pitches and leave feedback
     A user can submit a pitch in any category
     A user can submit to different categories
 
 Prerequisites
 
-    Python3.6
+    Python3.7
 
 Installation steps
 
-    $ git clone https://github.com/MarkAgimba/IP-Pitch.git
+    $ git clone https://xystus45.github.io/Pitches/. 
     $ cd IP-Pitch
     $ source virtual/bin/activate
     Inside the manage.py module change the config_name parameter from 'production' to 'development' ie app = create_app('production') should be app = create_app('development')
@@ -35,12 +34,12 @@ Technologies Used
 
     HTML5/CSS
     Bootstrap
-    Python3.6
+    Python3.7
     flask
 
 Support and Contacts
 
-https://github.com/MarkAgimba
+https://xystus45.github.io/Pitches/. 
 License
 
     MIT License
