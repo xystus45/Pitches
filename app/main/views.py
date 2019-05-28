@@ -6,7 +6,7 @@ from .forms import UpdateProfile, PitchForm, CommentForm
 from flask_login import login_required, current_user
 
 
-@main.route("/")
+@main.route('/')
 def index():
     '''
     View root page function that returns the index page and its data

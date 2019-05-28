@@ -23,7 +23,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(255))
     date_joined = db.Column(db.DateTime,default=datetime.utcnow)
 
-    pitches = db.relationship('Pitch', backref='user', lazy="dynamic")
+    pitches_id = db.relationship('Pitch', backref='user', lazy="dynamic")
 
     comments = db.relationship('Comment', backref='user', lazy="dynamic")
 
@@ -60,9 +60,9 @@ class Pitch(db.Model):
     # getting pitches by category
     @classmethod
     def get_pitches(cls, category):
-        pitches = Pitch.query.filter_by(category=category).all()
+        pitched = Pitch.query.filter_by(category=category).all()
 
-        return pitches
+        return pitched
 
     # getting a single pitch by id
     @classmethod
@@ -74,10 +74,10 @@ class Pitch(db.Model):
     @classmethod
     def count_pitches(cls,uname):
         user = User.query.filter_by(username=uname).first()
-        pitches = Pitch.query.filter_by(user_id=user.id).all()
+        pitch_list = Pitch.query.filter_by(user_id=user.id).all()
 
         pitches_count = 0
-        for pitch in pitches:
+        for pitch in pitches_list:
             pitches_count += 1
 
         return pitches_count
@@ -87,7 +87,7 @@ class Comment(db.Model):
     __tablename__ = 'comments'
 
     id = db.Column(db.Integer, primary_key=True)
-    pitch_id = db.Column(db.Integer)
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
     comment = db.Column(db.String(1000))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
