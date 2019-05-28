@@ -6,7 +6,7 @@ class Config:
     General configuration parent class
     '''
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = 'xystus'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     # email configurations
@@ -17,7 +17,7 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SUBJECT_PREFIX = 'Pitch Website'
-    SENDER_EMAIL = 'xystusngigi@gmail.com'
+    SENDER_EMAIL = 'gmail.com'
 
     @staticmethod
     def init_app(app):
